@@ -1,24 +1,15 @@
 #include <iostream>
 #include <pcap.h>
 #include <string>
+#include "./Logger/logging.hpp"
+#include "./NetworkInterfaceManager/NetworkInterfaceManager.hpp"
 
-int main(int argc, char* argv) {
-    char errbuf[PCAP_ERRBUF_SIZE];
-    pcap_if_t *alldevs;
-    
-    if (pcap_findalldevs(&alldevs, errbuf) == -1) {
-        std::cerr << "Error in pcap_findalldevs: " << errbuf << std::endl;
-        return 1;
-    }
-
-    std::cout << "Available network interfaces:" << std::endl;
-    for (pcap_if_t *d = alldevs; d != NULL; d = d->next) {
-        std::cout << "- " << d->name;
-        if (d->description)
-            std::cout << " (" << d->description << ")";
-        std::cout << std::endl;
-    }
-
-    pcap_freealldevs(alldevs);
+int main() {
+    Logger& logger = Logger::getInstance("log.txt", LogLevel::DEBUG, true);
+    NetworkInterfaceManager manager = NetworkInterfaceManager();
+    manager.discoverInterfaces();
+    manager.listInterfaces();
+    manager.selectInterface("en0");
+    pcap_t* handler = manager.getPcapHandle();
     return 0;
 }
