@@ -1,8 +1,8 @@
 #include "PacketCaptureEngine.hpp"
 
 
-PacketCaptureEngine::PacketCaptureEngine(NetworkInterfaceManager& manager) : nim(manager) {
-    pcapHanlde = (nim.getPcapHandle);
+PacketCaptureEngine::PacketCaptureEngine(NetworkInterfaceManager& manager) : nim(manager), isCapturing(false) {
+    pcapHandle = (nim.getPcapHandle());
     if (!pcapHandle) {
         throw std::runtime_error("Failed to get pcap handle from NetworkInterfaceManager");
     }
@@ -13,7 +13,7 @@ PacketCaptureEngine::PacketCaptureEngine(NetworkInterfaceManager& manager) : nim
     }
     //Lookup IPv4 network number and mask associated with the network device's device.
     if (pcap_lookupnet(device.c_str(), &net, &mask, errbuf) == -1) {
-        Logger::logger.getInstance.log_message("Couldn't get netmask for device " + device + ": " + errbuf, LogLevel::WARNING);
+        Logger::getInstance().log_message("Couldn't get netmask for device " + device + ": " + errbuf, LogLevel::WARNING);
         net = 0;
         mask = 0;
     } else {
@@ -25,22 +25,23 @@ PacketCaptureEngine::PacketCaptureEngine(NetworkInterfaceManager& manager) : nim
         inet_ntop(AF_INET, &addr, net_str, sizeof(net_str));
         addr.s_addr = mask;
         inet_ntop(AF_INET, &addr, mask_str, sizeof(mask_str));
-        Logger::logger.getInstance.log_message("Network: " + std::string(net_str) + ", Netmask: " + std::string(mask_str), LogLevel::INFO);
+        Logger::getInstance().log_message("Network: " + std::string(net_str) + ", Netmask: " + std::string(mask_str), LogLevel::INFO);
     }
 }
 
 PacketCaptureEngine::~PacketCaptureEngine() {
-    endLoop();
+    stopCapture();
+    cleanup();
 }
 
-PacketCaptureEngine::setFilter(const std::string& filter) {
+void PacketCaptureEngine::setFilter(const std::string& filterExpr) {
     struct bpf_program fp;
     char errbuf[PCAP_ERRBUF_SIZE];
     //Get the device (should always be valid since we checked in constructor)
-    const std::string& device = nim.getSelectedInterface().value_or("")
+    const std::string& device = nim.getSelectedInterface().value_or("");
 
     //Compile filter
-    if (pcap_compile(pcapHandle, &fp, filterExpr, 0, net) == -1) {
+    if (pcap_compile(pcapHandle, &fp, filterExpr.c_str(), 0, net) == -1) {
         throw std::runtime_error("Failed to compile filter: " + std::string(pcap_geterr(pcapHandle)));
     }
     
@@ -52,29 +53,29 @@ PacketCaptureEngine::setFilter(const std::string& filter) {
 
     //Filter is set, free the helper filter compiler
     pcap_freecode(&fp);
-    Logger::logger.getInstance.log_message("Successfully applied filter: " + filterExpr, LogLevel::INFO); 
+    Logger::getInstance().log_message("Successfully applied filter: " + filterExpr, LogLevel::INFO); 
 }
 
 
 void PacketCaptureEngine::startCapture() {
     //If we are already capturing packets, no need to continue
     if (isCapturing) {
-        Logger::logger.getInstance.log_message("Already capturing packets", LogLevel::INFO);
-        return
+        Logger::getInstance().log_message("Already capturing packets", LogLevel::INFO);
+        return;
     }
     //Validate loop condition
     isCapturing = true;
     
     //Set capture thread to start at captureLoop function and operate
     captureThread = std::thread(&PacketCaptureEngine::captureLoop, this);
-    Logger::logger.getInstance.log_message("Packet capture started", LogLevel::INFO);
+    Logger::getInstance().log_message("Packet capture started", LogLevel::INFO);
 }
 
 void PacketCaptureEngine::stopCapture() {
     //If there is no capture process to stop, no need to continue
     if (!isCapturing) {
-        Logger::logger.getInstance.log_message("No capture active", LogLevel::INFO);
-        return
+        Logger::getInstance().log_message("No capture active", LogLevel::INFO);
+        return;
     }
     //Stop packet capture loop
     isCapturing = false;
@@ -83,13 +84,21 @@ void PacketCaptureEngine::stopCapture() {
     if (captureThread.joinable()) {
         captureThread.join();
     }
-    Logger:logger.getInstance.log_message("Packet capture stopped", LogLevel::INFO);
+    Logger::getInstance().log_message("Packet capture stopped", LogLevel::INFO);
 }
 
 void PacketCaptureEngine::captureLoop() {
     //While we want to capture packets, sniff one packet at a time and call packetHandler with args of the current object casted as a u_char* 
     while (isCapturing) {
-        pcap_loop(pcapHandle, 1, packetHandler, reinterpret_cast<u_char*>(this));
+        int result = pcap_loop(pcapHandle, 1, packetHandler, reinterpret_cast<u_char*>(this));
+        if (result == -1) {
+            //Error with pcap_loop
+            Logger::getInstance().log_message("Error in pcap_loop: " + std::string(pcap_geterr(pcapHandle)), LogLevel::ERROR);
+            break;
+        } else if (result == -2) {
+            // pcap_breakloop was called
+            break;
+        }
     }
 }
 
@@ -99,8 +108,13 @@ void PacketCaptureEngine::packetHandler(u_char* userData, const struct pcap_pkth
     auto pce = reinterpret_cast<PacketCaptureEngine*>(userData);
 
     //Lock the packet queue so we can add to it atomically
-    std::lock_guard<std::mutex> lock(engine->queueMutex);
-    engine->packetQueue.push(std::make_pair(pkthdr, packet));
+    std::lock_guard<std::mutex> lock(pce->queueMutex);
+
+    auto header_copy = new pcap_pkthdr(*pkthdr);
+    auto packet_copy = new u_char[pkthdr->len];
+    memcpy(packet_copy, packet, pkthdr->len);
+    
+    pce->packetQueue.push(std::make_pair(header_copy, packet_copy));
 }
 
 //Allow for other files to access packets that are stored in the packetQueue by the pce
@@ -116,7 +130,20 @@ bool PacketCaptureEngine::getNextPacket(struct pcap_pkthdr** header, const u_cha
     
     //Get rid of the packet from the queue
     packetQueue.pop();
-
-    //Return true as success and also unlock the mutex
     return true;
+}
+
+//Return the current capture status
+bool PacketCaptureEngine::getCaptureStatus() const {
+    return isCapturing;
+}
+
+//Cleanup any unused pairs in the packetQueue
+void PacketCaptureEngine::cleanup() {
+    while (!packetQueue.empty()) {
+        auto& front = packetQueue.front();
+        delete front.first;
+        delete[] front.second;
+        packetQueue.pop();
+    }
 }

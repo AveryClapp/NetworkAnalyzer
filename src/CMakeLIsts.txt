@@ -1,0 +1,33 @@
+cmake_minimum_required(VERSION 3.10)
+project(NetworkProtocolAnalyzer)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Find required packages
+find_package(Threads REQUIRED)
+
+# Find libpcap
+find_path(PCAP_INCLUDE_DIR NAMES pcap.h)
+find_library(PCAP_LIBRARY NAMES pcap)
+
+if(NOT PCAP_INCLUDE_DIR OR NOT PCAP_LIBRARY)
+    message(FATAL_ERROR "libpcap not found. Please install libpcap.")
+endif()
+
+# Add include directories
+include_directories(${PCAP_INCLUDE_DIR})
+
+# Add executable
+add_executable(network_analyzer
+    main.cpp
+    NetworkInterfaceManager/NetworkInterfaceManager.cpp
+    PacketCaptureEngine/PacketCaptureEngine.cpp
+    Logger/logging.cpp
+)
+
+# Link libraries
+target_link_libraries(network_analyzer
+    ${PCAP_LIBRARY}
+    Threads::Threads
+)
