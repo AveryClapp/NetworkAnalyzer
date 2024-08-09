@@ -4,6 +4,7 @@
 #include <pcap.h>
 #include <string>
 #include <vector>
+#include <optional> 
 
 class NetworkInterface {
 public:
@@ -13,9 +14,11 @@ public:
 
 class NetworkInterfaceManager {
     private:
-        NetworkInterface selectedInterface;
+        std::optional<NetworkInterface> selectedInterface;
         std::vector<NetworkInterface> interfaces;
         pcap_t* pcapHandle;
+        std::optional<int> linkType;
+
     public:
         NetworkInterfaceManager();
 
@@ -27,7 +30,11 @@ class NetworkInterfaceManager {
     
         void listInterfaces() const;
 
-        pcap_t* getPcapHandle() const;
+        pcap_t* getPcapHandle();
+        
+        std::optional<int> getDataLinkType() const;
+
+        std::optional<std::string> getSelectedInterface() const;
 };
 
 
