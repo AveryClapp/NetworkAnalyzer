@@ -201,6 +201,30 @@ PacketCaptureEngine/PacketCaptureEngine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.s
 .PHONY : PacketCaptureEngine/PacketCaptureEngine.cpp.s
 
+ProtocolParser/ProtocolParser.o: ProtocolParser/ProtocolParser.cpp.o
+.PHONY : ProtocolParser/ProtocolParser.o
+
+# target to build an object file
+ProtocolParser/ProtocolParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o
+.PHONY : ProtocolParser/ProtocolParser.cpp.o
+
+ProtocolParser/ProtocolParser.i: ProtocolParser/ProtocolParser.cpp.i
+.PHONY : ProtocolParser/ProtocolParser.i
+
+# target to preprocess a source file
+ProtocolParser/ProtocolParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.i
+.PHONY : ProtocolParser/ProtocolParser.cpp.i
+
+ProtocolParser/ProtocolParser.s: ProtocolParser/ProtocolParser.cpp.s
+.PHONY : ProtocolParser/ProtocolParser.s
+
+# target to generate assembly for a file
+ProtocolParser/ProtocolParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.s
+.PHONY : ProtocolParser/ProtocolParser.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -243,6 +267,9 @@ help:
 	@echo "... PacketCaptureEngine/PacketCaptureEngine.o"
 	@echo "... PacketCaptureEngine/PacketCaptureEngine.i"
 	@echo "... PacketCaptureEngine/PacketCaptureEngine.s"
+	@echo "... ProtocolParser/ProtocolParser.o"
+	@echo "... ProtocolParser/ProtocolParser.i"
+	@echo "... ProtocolParser/ProtocolParser.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

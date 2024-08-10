@@ -24,6 +24,7 @@ add_executable(network_analyzer
     NetworkInterfaceManager/NetworkInterfaceManager.cpp
     PacketCaptureEngine/PacketCaptureEngine.cpp
     Logger/logging.cpp
+    ProtocolParser/ProtocolParser.cpp
 )
 
 # Link libraries

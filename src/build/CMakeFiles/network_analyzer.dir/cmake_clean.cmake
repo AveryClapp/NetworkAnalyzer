@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o.d"
   "CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o"
   "CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o.d"
+  "CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o"
+  "CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o.d"
   "CMakeFiles/network_analyzer.dir/main.cpp.o"
   "CMakeFiles/network_analyzer.dir/main.cpp.o.d"
   "network_analyzer"
