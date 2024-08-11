@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(NetworkProtocolAnalyzer)
 
+# Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -10,25 +11,39 @@ find_package(Threads REQUIRED)
 # Find libpcap
 find_path(PCAP_INCLUDE_DIR NAMES pcap.h)
 find_library(PCAP_LIBRARY NAMES pcap)
-
 if(NOT PCAP_INCLUDE_DIR OR NOT PCAP_LIBRARY)
     message(FATAL_ERROR "libpcap not found. Please install libpcap.")
 endif()
 
 # Add include directories
-include_directories(${PCAP_INCLUDE_DIR})
+include_directories(
+    ${PCAP_INCLUDE_DIR}
+    ${CMAKE_SOURCE_DIR}  # This allows including files relative to the project root
+)
 
-# Add executable
-add_executable(network_analyzer
+# Define source files
+set(SOURCES
     main.cpp
+    NetworkAnalyzer.cpp
     NetworkInterfaceManager/NetworkInterfaceManager.cpp
     PacketCaptureEngine/PacketCaptureEngine.cpp
     Logger/logging.cpp
     ProtocolParser/ProtocolParser.cpp
+    TrafficAnalysisEngine/TrafficAnalysisEngine.cpp
 )
+
+# Add executable
+add_executable(network_analyzer ${SOURCES})
 
 # Link libraries
 target_link_libraries(network_analyzer
     ${PCAP_LIBRARY}
     Threads::Threads
 )
+
+# Optionally, set compiler warnings
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(network_analyzer PRIVATE -Wall -Wextra -Wpedantic)
+elseif(MSVC)
+    target_compile_options(network_analyzer PRIVATE /W4)
+endif()

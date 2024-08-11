@@ -9,9 +9,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/Logger/logging.cpp" "CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o" "gcc" "CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o.d"
+  "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/NetworkAnalyzer.cpp" "CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o" "gcc" "CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o.d"
   "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/NetworkInterfaceManager/NetworkInterfaceManager.cpp" "CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o" "gcc" "CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o.d"
   "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/PacketCaptureEngine/PacketCaptureEngine.cpp" "CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o" "gcc" "CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o.d"
   "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/ProtocolParser/ProtocolParser.cpp" "CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o" "gcc" "CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o.d"
+  "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp" "CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o" "gcc" "CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o.d"
   "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/main.cpp" "CMakeFiles/network_analyzer.dir/main.cpp.o" "gcc" "CMakeFiles/network_analyzer.dir/main.cpp.o.d"
   )
 

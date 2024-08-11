@@ -83,10 +83,24 @@ CMakeFiles/network_analyzer.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/network_analyzer.dir/main.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/main.cpp" -o CMakeFiles/network_analyzer.dir/main.cpp.s
 
+CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o: CMakeFiles/network_analyzer.dir/flags.make
+CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o: /Users/averyclapp/Documents/Coding\ Stuff/GitProjects/NetworkAnalyzer/src/NetworkAnalyzer.cpp
+CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o: CMakeFiles/network_analyzer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o -MF CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o.d -o CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o -c "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/NetworkAnalyzer.cpp"
+
+CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/NetworkAnalyzer.cpp" > CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.i
+
+CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/NetworkAnalyzer.cpp" -o CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.s
+
 CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o: CMakeFiles/network_analyzer.dir/flags.make
 CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o: /Users/averyclapp/Documents/Coding\ Stuff/GitProjects/NetworkAnalyzer/src/NetworkInterfaceManager/NetworkInterfaceManager.cpp
 CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o: CMakeFiles/network_analyzer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o -MF CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o.d -o CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o -c "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/NetworkInterfaceManager/NetworkInterfaceManager.cpp"
 
 CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.
 CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o: CMakeFiles/network_analyzer.dir/flags.make
 CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o: /Users/averyclapp/Documents/Coding\ Stuff/GitProjects/NetworkAnalyzer/src/PacketCaptureEngine/PacketCaptureEngine.cpp
 CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o: CMakeFiles/network_analyzer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o -MF CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o.d -o CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o -c "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/PacketCaptureEngine/PacketCaptureEngine.cpp"
 
 CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.s: c
 CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o: CMakeFiles/network_analyzer.dir/flags.make
 CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o: /Users/averyclapp/Documents/Coding\ Stuff/GitProjects/NetworkAnalyzer/src/Logger/logging.cpp
 CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o: CMakeFiles/network_analyzer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o -MF CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o.d -o CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o -c "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/Logger/logging.cpp"
 
 CMakeFiles/network_analyzer.dir/Logger/logging.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/network_analyzer.dir/Logger/logging.cpp.s: cmake_force
 CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o: CMakeFiles/network_analyzer.dir/flags.make
 CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o: /Users/averyclapp/Documents/Coding\ Stuff/GitProjects/NetworkAnalyzer/src/ProtocolParser/ProtocolParser.cpp
 CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o: CMakeFiles/network_analyzer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o -MF CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o.d -o CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o -c "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/ProtocolParser/ProtocolParser.cpp"
 
 CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.i: cmake_force
@@ -139,26 +153,44 @@ CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/ProtocolParser/ProtocolParser.cpp" -o CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.s
 
+CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o: CMakeFiles/network_analyzer.dir/flags.make
+CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o: /Users/averyclapp/Documents/Coding\ Stuff/GitProjects/NetworkAnalyzer/src/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp
+CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o: CMakeFiles/network_analyzer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o -MF CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o.d -o CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o -c "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp"
+
+CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp" > CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.i
+
+CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp" -o CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.s
+
 # Object files for target network_analyzer
 network_analyzer_OBJECTS = \
 "CMakeFiles/network_analyzer.dir/main.cpp.o" \
+"CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o" \
 "CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o" \
 "CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o" \
 "CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o" \
-"CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o"
+"CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o" \
+"CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o"
 
 # External object files for target network_analyzer
 network_analyzer_EXTERNAL_OBJECTS =
 
 network_analyzer: CMakeFiles/network_analyzer.dir/main.cpp.o
+network_analyzer: CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o
 network_analyzer: CMakeFiles/network_analyzer.dir/NetworkInterfaceManager/NetworkInterfaceManager.cpp.o
 network_analyzer: CMakeFiles/network_analyzer.dir/PacketCaptureEngine/PacketCaptureEngine.cpp.o
 network_analyzer: CMakeFiles/network_analyzer.dir/Logger/logging.cpp.o
 network_analyzer: CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.o
+network_analyzer: CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o
 network_analyzer: CMakeFiles/network_analyzer.dir/build.make
 network_analyzer: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libpcap.tbd
 network_analyzer: CMakeFiles/network_analyzer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable network_analyzer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/averyclapp/Documents/Coding Stuff/GitProjects/NetworkAnalyzer/src/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable network_analyzer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/network_analyzer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

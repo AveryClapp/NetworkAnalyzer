@@ -153,6 +153,30 @@ Logger/logging.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/Logger/logging.cpp.s
 .PHONY : Logger/logging.cpp.s
 
+NetworkAnalyzer.o: NetworkAnalyzer.cpp.o
+.PHONY : NetworkAnalyzer.o
+
+# target to build an object file
+NetworkAnalyzer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.o
+.PHONY : NetworkAnalyzer.cpp.o
+
+NetworkAnalyzer.i: NetworkAnalyzer.cpp.i
+.PHONY : NetworkAnalyzer.i
+
+# target to preprocess a source file
+NetworkAnalyzer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.i
+.PHONY : NetworkAnalyzer.cpp.i
+
+NetworkAnalyzer.s: NetworkAnalyzer.cpp.s
+.PHONY : NetworkAnalyzer.s
+
+# target to generate assembly for a file
+NetworkAnalyzer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/NetworkAnalyzer.cpp.s
+.PHONY : NetworkAnalyzer.cpp.s
+
 NetworkInterfaceManager/NetworkInterfaceManager.o: NetworkInterfaceManager/NetworkInterfaceManager.cpp.o
 .PHONY : NetworkInterfaceManager/NetworkInterfaceManager.o
 
@@ -225,6 +249,30 @@ ProtocolParser/ProtocolParser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/ProtocolParser/ProtocolParser.cpp.s
 .PHONY : ProtocolParser/ProtocolParser.cpp.s
 
+TrafficAnalysisEngine/TrafficAnalysisEngine.o: TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o
+.PHONY : TrafficAnalysisEngine/TrafficAnalysisEngine.o
+
+# target to build an object file
+TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o
+.PHONY : TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.o
+
+TrafficAnalysisEngine/TrafficAnalysisEngine.i: TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.i
+.PHONY : TrafficAnalysisEngine/TrafficAnalysisEngine.i
+
+# target to preprocess a source file
+TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.i
+.PHONY : TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.i
+
+TrafficAnalysisEngine/TrafficAnalysisEngine.s: TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.s
+.PHONY : TrafficAnalysisEngine/TrafficAnalysisEngine.s
+
+# target to generate assembly for a file
+TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_analyzer.dir/build.make CMakeFiles/network_analyzer.dir/TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.s
+.PHONY : TrafficAnalysisEngine/TrafficAnalysisEngine.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -261,6 +309,9 @@ help:
 	@echo "... Logger/logging.o"
 	@echo "... Logger/logging.i"
 	@echo "... Logger/logging.s"
+	@echo "... NetworkAnalyzer.o"
+	@echo "... NetworkAnalyzer.i"
+	@echo "... NetworkAnalyzer.s"
 	@echo "... NetworkInterfaceManager/NetworkInterfaceManager.o"
 	@echo "... NetworkInterfaceManager/NetworkInterfaceManager.i"
 	@echo "... NetworkInterfaceManager/NetworkInterfaceManager.s"
@@ -270,6 +321,9 @@ help:
 	@echo "... ProtocolParser/ProtocolParser.o"
 	@echo "... ProtocolParser/ProtocolParser.i"
 	@echo "... ProtocolParser/ProtocolParser.s"
+	@echo "... TrafficAnalysisEngine/TrafficAnalysisEngine.o"
+	@echo "... TrafficAnalysisEngine/TrafficAnalysisEngine.i"
+	@echo "... TrafficAnalysisEngine/TrafficAnalysisEngine.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
